@@ -1,4 +1,5 @@
 // For my first challenge I picked an algorithm from the easiest level: 8kyu on CodeWars.
+// https://www.codewars.com/kata/get-nth-even-number/train/javascript
 
 //Return the Nth Even Number
 //
