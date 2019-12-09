@@ -49,10 +49,14 @@ def determineTime(arr):
         print(total_seconds)
         if total_hours > 24:
             return False
+#         elif total_hours == 23 and total_minutes > 60:
+#             return False
+#         elif total_hours == 24 and total_minutes > 0:
+#             return False
+#         elif total_hours == 24 and total_seconds > 0:
+#             return False
     else:
         return True
 
-
-
-print determineTime(["12:41:28", "09:31:48"])
+print determineTime(["12:37:59", "11:07:29"])
 
