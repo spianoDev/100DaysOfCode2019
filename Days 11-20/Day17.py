@@ -27,13 +27,13 @@ def determineTime(arr):
         # My first task is to get rid of the : so I can work with the numbers
         intervals = times.replace(":", "")
         # Next, I will use this logic: % 10 returns the final digit of a number. Dividing by 10 shifts the number one digit to the right.
-        hour_tens = (int(intervals) / 100000) % 10
-        hour_ones = (int(intervals) / 10000) % 10
+        hour_tens = (int(intervals) // 100000) % 10
+        hour_ones = (int(intervals) // 10000) % 10
         hours = (hour_tens * 10) + hour_ones
-        minute_tens = (int(intervals) / 1000) % 10
-        minute_ones = (int(intervals) / 100) % 10
+        minute_tens = (int(intervals) // 1000) % 10
+        minute_ones = (int(intervals) // 100) % 10
         minutes = (minute_tens * 10) + minute_ones
-        second_tens = (int(intervals) / 10) % 10
+        second_tens = (int(intervals) // 10) % 10
         second_ones = int(intervals) % 10
         seconds = (second_tens * 10) + second_ones
         # Finally I will need to consolidate the values to check if together they add up to more than 24 hours
@@ -47,16 +47,14 @@ def determineTime(arr):
         print(total_hours)
         print(total_minutes)
         print(total_seconds)
-        if total_hours > 24:
+        if total_hours >= 24:
             return False
-#         elif total_hours == 23 and total_minutes > 60:
-#             return False
-#         elif total_hours == 24 and total_minutes > 0:
-#             return False
-#         elif total_hours == 24 and total_seconds > 0:
-#             return False
+        elif total_hours == 24 and total_minutes > 0:
+            return False
+        elif total_hours == 24 and total_seconds > 0:
+            return False
     else:
         return True
 
-print determineTime(["12:37:59", "11:07:29"])
+print determineTime(["06:00:00", "18:00:00"])
 
