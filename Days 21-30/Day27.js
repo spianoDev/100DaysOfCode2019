@@ -1,4 +1,4 @@
-// 7kyu on CodeWars:
+// 7kyu on CodeWars: https://www.codewars.com/kata/holiday-array-repair/train/javascript
 //
 // The Problem
 // A colleague has been working on a program that returns the number of days of holiday that people in your coding company can take in the remainder of the year.
