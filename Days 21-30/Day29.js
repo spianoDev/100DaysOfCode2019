@@ -23,16 +23,25 @@
 //         {name: 'Tooth Fairy', response: 'accepted'}
 //     ] );// => returns ['Tooth Fairy', 'Frosty the Snowman']
 
+// trying a new tactic since I realized none of my slice pieces were working.
 function getAttendees(people, responses) {
     //I need an internal array to add the people coming based on responses.
+    let peopleList = [];
     let peopleComing = [];
-    let morePeopleComing = peopleComing.concat(people);
-    // first I will check for those who have responded yes and add them to the peopleComing list.
+    for (let j = 0; j < people.length; j++) {
+        for (let k = 0; k < responses.length; k++) {
+            if (people[j] === responses[k].name) {
+                people.splice(j, 1);
+            }
+        }
+    }
+    console.log(people);
+    // next I will determine who is coming based on the responses
     for (let i = 0; i < responses.length; i++) {
         if (responses[i].response === 'accepted') {
-            peopleComing.push(responses[i].name);
+            peopleList.push(responses[i].name);
         }
-        console.log('peeps saying they are coming: ' + peopleComing);
+        // console.log('peeps saying they are coming: ' + peopleComing);
     }
     // I was struggling with this so I looked up a possible solution: https://www.tutorialrepublic.com/faq/how-to-remove-duplicate-values-from-a-javascript-array.php
     function getUnique(array){
@@ -45,13 +54,11 @@ function getAttendees(people, responses) {
         }
         return uniqueArray;
     }
-
-    console.log(morePeopleComing);
+    console.log(peopleList);
     // finally return the complete list of attendees
-    let finalList = [];
+    peopleComing = peopleList.concat(people);
     // But, there might be some repeats so
-    console.log('This is the final list of people: ' + getUnique(finalList));
-    return getUnique(finalList);
+    return getUnique(peopleComing);
 }
 
 
@@ -60,7 +67,6 @@ let people = ['Easter Bunny', 'Tooth Fairy', 'Frosty the Snowman',
 let responses = [
     {name: 'Easter Bunny', response: 'declined'},
     {name: 'Jack Frost', response: 'declined'},
-    {name: 'Tooth Fairy', response: 'accepted'},
     {name: 'Tooth Fairy', response: 'accepted'}
 ];
 
