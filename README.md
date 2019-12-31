@@ -6,6 +6,8 @@ Please note the code will be organized by days and will include many comments to
 
 Initially I wanted to only complete challenges that were algorithms but as December hit, I changed direction to 'themed' Kata specific to the upcoming holiday. Here is an example of a Christmas themed 6kyu javascript problem:
 
+### Celebrating the Holidays - JavaScript Style
+
 ```javascript
 
 function findOutChristmasWeekday(date) {
@@ -32,3 +34,25 @@ function findOutChristmasWeekday(date) {
 }
 console.log(findOutChristmasWeekday('2013 12 25'));
 ```
+
+Here is an example of a 6kyu python problem that is a more typical algorithm. This particular piece of code passed all the codewars tests the first time I entered the solution!
+
+### Python Algorithm Solution
+
+```python
+def clean_string(s):
+    # Because any # later in the string will erase what is already added, I will use a list to store the values
+    letters = []
+    for char in s:
+    # Add all the letters
+        if char != '#':
+            letters.append(char)
+            # remove a letter for each #
+        if char == '#' and len(letters) > 0:
+            letters.pop()
+    answer = ''.join(letters)
+    print(answer)
+    return answer
+print(clean_string('abc####d##c#'))
+```
+
