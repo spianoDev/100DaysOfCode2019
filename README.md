@@ -55,4 +55,33 @@ def clean_string(s):
     return answer
 print(clean_string('abc####d##c#'))
 ```
+### A clever solution in JavaScript
+(From Day 47)
 
+```javascript
+function mineLocation(field){
+    let mineLocation = [];
+    let secondPlace;
+    // I think the best way to do this is to compare values using a double loop to search the arrays
+    for (let i = 0; i < field.length; i++) {
+        // This tells me the second position of the mine
+        secondPlace = field[i].indexOf(1);
+        // I know the value that isn't -1 will contain the mine
+        if (secondPlace >= 0) {
+            console.log(i);
+            mineLocation.unshift(i);
+        }
+           // console.log(secondPlace)
+         if (secondPlace !== -1) {
+             mineLocation.push(secondPlace);
+        //     // console.log(mineLocation);
+         }
+    }
+
+     console.log(mineLocation);
+        return mineLocation;
+}
+
+mineLocation([[0, 0, 0], [0, 0, 1], [0, 0, 0] ]);
+>>[1, 2]
+```
