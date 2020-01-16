@@ -16,21 +16,32 @@ function findSubstring(s, words) {
     // I think I will start by comparing the string with the concatenation of the words.
     let completeWordChoices = [];
     let indexValues = [];
-    // I need to add the case for the edge case of all the entries being identical
-    if (words[0] === words[1] && words[1] === words[2] && s.includes(words[0])) {
-        indexValues.push(0, 1, 2);
+    let indexAnswers = [];
+    // I need to add the case for the edge case of all the words entries being identical
+    let allEqual = words => words.every( chars => chars === words[0] );
+
+    if (allEqual(words)) {
+        completeWordChoices.push(words.join(''));
+        console.log(completeWordChoices);
+        console.log(s.includes(completeWordChoices));
+        let n = 0;
+        while (s.includes(completeWordChoices, n)) {
+            indexValues.push(s.indexOf(completeWordChoices, n));
+            n++;
+        }
+        console.log(indexValues);
     } else {
     // I'm going to try making a variable that concatenates all the words in order and in reverse order
     // let longWord = words.join('');
     // let longReverse = words.reverse().join('');
     // So this had me on the right track, but I did a bit of research to discover a shuffle algorithm
     // based on the Fisher-Yates shuffle: https://javascript.info/task/shuffle
-    for (let i = 0; i < words.length * words.length * words.length; i++) {
-
-
-            // I decided multiplying the length of the words array 4X would statistically guarantee all possible outcomes.
-            shuffle(words);
-            completeWordChoices.push(words.join(''));
+    //     console.log(s.length);
+    for (let i = 0; i < s.length * 2; i++) {
+            // I decided to go with the length of the words array 2X to statistically guarantee all possible
+        // outcomes.
+        shuffle(words);
+        completeWordChoices.push(words.join(''));
         }
     }
     // now let's compare the choices to the string given.
@@ -44,7 +55,7 @@ function findSubstring(s, words) {
     }
     // Now I need to sort these numbers and eliminate duplicates
     let sortedIndex = indexValues.sort(function(a, b){return a-b});
-    let indexAnswers = [...new Set(sortedIndex)];
+    indexAnswers = [...new Set(sortedIndex)];
     console.log(s);
     console.log(words);
     console.log(indexAnswers);
@@ -57,4 +68,4 @@ function shuffle(options) {
     }
 }
 
-findSubstring("helloworld", ["bar", "foo"]);
+findSubstring("aaaaaaaa", ["aa", "aa", "aa"]);
