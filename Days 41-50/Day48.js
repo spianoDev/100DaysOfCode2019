@@ -29,6 +29,7 @@ function findSubstring(s, words) {
             indexValues.push(s.indexOf(completeWordChoices, n));
             n++;
         }
+        console.log(completeWordChoices);
         console.log(indexValues);
     } else {
     // I'm going to try making a variable that concatenates all the words in order and in reverse order
@@ -37,22 +38,24 @@ function findSubstring(s, words) {
     // So this had me on the right track, but I did a bit of research to discover a shuffle algorithm
     // based on the Fisher-Yates shuffle: https://javascript.info/task/shuffle
     //     console.log(s.length);
-    for (let i = 0; i < s.length * 2; i++) {
-            // I decided to go with the length of the words array 2X to statistically guarantee all possible
-        // outcomes.
+        let numberOfWords = s.length * words[0].length;
+    for (let i = 0; i < numberOfWords; i++) {
+            // I decided to go with the length of the s string X length of the word to statistically guarantee all
+        // possible outcomes.
         shuffle(words);
         completeWordChoices.push(words.join(''));
         }
     }
     // now let's compare the choices to the string given.
-
+    // console.log(completeWordChoices);
     for (let newWord in completeWordChoices) {
         if (s.includes(completeWordChoices[newWord])) {
-            // console.log('yes');
+             // console.log('yes');
             // console.log(s.indexOf(completeWordChoices[newWord]));
             indexValues.push(s.indexOf(completeWordChoices[newWord]));
         }
     }
+    console.log(indexValues);
     // Now I need to sort these numbers and eliminate duplicates
     let sortedIndex = indexValues.sort(function(a, b){return a-b});
     indexAnswers = [...new Set(sortedIndex)];
@@ -68,4 +71,4 @@ function shuffle(options) {
     }
 }
 
-findSubstring("aaaaaaaa", ["aa", "aa", "aa"]);
+findSubstring("lingmindraboofooowingdingbarrwingmonkeypoundcake", ["fooo","barr","wing","ding","wing"]);
