@@ -43,3 +43,7 @@ function touchType(str) {
 }
 
 touchType('  two spaces');
+// I feel like this solution requires some explanation. I couldn't sleep so I woke in the middle of the night and
+// decided to work on this algorithm. I couldn't get the spread operator to work and I was so close to the
+// solution... I was also getting tired, so I just wrote out all the options for the lefChars and when it passed, I
+// went back to bed. In looking at this (the next day) I'm a bit embarrassed that I actually submitted it this way.
