@@ -56,6 +56,6 @@ let searchArray = function (arrayToSearch, query) {
     return -1;
 };
 
-console.log(searchArray([ [ 1, 2 ], [ 3, 4 ], [ 5, 6, 7 ], [ 8, 9 ] ],
-    [ 9, 20 ]));
+console.log(searchArray([ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ], [ 8, 9 ] ],
+    [ 8, 9 ]));
 
