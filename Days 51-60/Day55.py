@@ -64,3 +64,6 @@ def array_diff(a, b):
 # array_diff([-1, 8, 2, 16, -4, -14, -16, 19, 19, 8, 8, 10, -19],  [5, 4, -7, -11, 15, 1, -20, -18, 10, 18, -10, 2, -1, -2, -5, 1, 6, -20, -7])
 array_diff([7, 20, 0, 7, 8, 2, -17], [2, -8, 16, 10, 15, -9, -17, 19, -9, -14, 10, 20, -20, -6, -19, -17, -14, -3])
 # array_diff([1,2], [2,3,4,5])
+
+# I was able to pass all the given tests, but each new condition of the random test meant refactoring the code so I
+# am going to stop where the code is for now.
