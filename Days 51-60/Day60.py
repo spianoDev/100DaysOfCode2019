@@ -20,15 +20,21 @@ def exchange_with(a, b):
     print(b)
     new_a = []
     new_b = []
-    for i, item in enumerate(reversed(b)):
-        new_a.append(item)
-    for i, item in enumerate(reversed(a)):
-        new_b.append(item)
-    a = new_a
-    b = new_b
+    placeholder1 = a.copy()
+    placeholder2 = b.copy()
+    a.clear()
+    b.clear()
+    for i, item in enumerate(reversed(placeholder2)):
+        a.append(item)
+#     a = new_a
+    for i, item in enumerate(reversed(placeholder1)):
+        b.append(item)
+#     b = new_b
     print(a)
     print(b)
+    return a, b
 
 
 exchange_with(['a', 'b', 'c'], [1, 2, 3])
 # This works perfectly, but I have no idea how to return the values to pass the tests which is super annoying!
+# Basically what the program wanted was for the original list to be cleared and then reversed. 
