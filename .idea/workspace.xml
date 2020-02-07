@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2b318bb-2543-483e-bcca-339f400724ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Days 61-70/Day62.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days 61-70/Day61.js" beforeDir="false" afterPath="$PROJECT_DIR$/Days 61-70/Day61.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,8 @@
       <workItem from="1576642439553" duration="193000" />
       <workItem from="1576650866729" duration="9485000" />
       <workItem from="1576883833589" duration="186850000" />
-      <workItem from="1580830103066" duration="851000" />
+      <workItem from="1580830103066" duration="1801000" />
+      <workItem from="1580916513067" duration="8698000" />
     </task>
     <servers />
   </component>
@@ -116,7 +117,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Days 61-70/Day61.js</url>
           <line>91</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
