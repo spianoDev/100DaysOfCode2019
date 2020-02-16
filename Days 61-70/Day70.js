@@ -46,6 +46,7 @@ function alphabetized(s) {
         // now I will check the values of the uppercase against the original array
         for (let c = 0; c < count; c++) {
             let character = alphaString[c];
+
             if (nonAlphaRemoved.indexOf(character) > nonAlphaRemoved.indexOf(character.toLowerCase())) {
                 let targetIndex = alphaString.indexOf(character.toLowerCase());
                 // console.log(targetIndex);
@@ -53,22 +54,24 @@ function alphabetized(s) {
                 if (targetIndex >= 0) {
                     alphaOrder.splice(targetIndex + 1, 0, character);
                 }
-
                 // this will move the uppercase letter to alpha order at the end
                 if (targetIndex === -1) {
                     alphaOrder.splice(targetIndex, 0, character);
                 }
-            // }
-            // if the uppercase letter is after the lowercase in the original string I need to move it after
-            // but I cannot figure out how to do that... I will come back to this.
-            } else if (nonAlphaRemoved.indexOf(character) < nonAlphaRemoved.indexOf(character.toLowerCase())) {
+            }// if the uppercase letter is after the lowercase in the original string I need to move it after
+            // but now both the uppercase letters are placed after the lowercase letters.
+             else if (nonAlphaRemoved.indexOf(character) < nonAlphaRemoved.lastIndexOf(character)){
+                let targetIndex = alphaString.lastIndexOf(character.toLowerCase());
+                alphaOrder.splice(targetIndex + 1, 0, character);
+            }
+             //changing the else if to if statements returns the uppercase J to in front of the lowercase ones
+             else if (nonAlphaRemoved.indexOf(character) < nonAlphaRemoved.indexOf(character.toLowerCase())) {
                 let targetIndex = alphaString.indexOf(character.toLowerCase());
                 // this will move the uppercase letter to behind the lowercase letter
                 if (targetIndex >= 0) {
                     alphaOrder.splice(targetIndex, 0, character);
                 }
             }
-
             // now I need to remove the extra capitol letters from the beginning of the array
             let newString = alphaOrder.join('');
             console.log('after all the moves ' +newString);
