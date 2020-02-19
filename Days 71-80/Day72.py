@@ -27,20 +27,38 @@
 #
 # so be ready to optimize.
 
+# def jumbled_string(s, n):
+#     # everything gets wrapped in a recursive loop to run n times
+#     while n > 0:
+#     # I'm going to need two new variables to store the odd/even characters
+#         even_front = []
+#         odd_back = []
+#         for index, char in enumerate(s):
+#             if index % 2 == 0:
+#                 even_front.append(char)
+#             else:
+#                 odd_back.append(char)
+# #         print(even_front, odd_back)
+#         # Then concatenate the two joined arrays together
+#         answer = "".join(even_front) + "".join(odd_back)
+# #         print(answer)
+#         s = answer
+#         n -= 1
+#         if n == 0:
+#             print(answer)
+#             return answer
+
+# The above answer totally works, but it isn't efficient to pass all the tests
+
 def jumbled_string(s, n):
     # everything gets wrapped in a recursive loop to run n times
     while n > 0:
     # I'm going to need two new variables to store the odd/even characters
-        even_front = []
-        odd_back = []
-        for index, char in enumerate(s):
-            if index % 2 == 0:
-                even_front.append(char)
-            else:
-                odd_back.append(char)
-#         print(even_front, odd_back)
-        # Then concatenate the two joined arrays together
-        answer = "".join(even_front) + "".join(odd_back)
+    # This time I am grabbing every other index using the python string range
+        even_front = s[0:len(s):2]
+        odd_back = s[1:len(s):2]
+        # Then concatenate the variables together
+        answer = even_front + odd_back
 #         print(answer)
         s = answer
         n -= 1
@@ -48,10 +66,11 @@ def jumbled_string(s, n):
             print(answer)
             return answer
 
+# this answer is much faster, but still times out
 
 # jumbled_string("Such Wow!", 1) # "Sc o!uhWw"
 # jumbled_string("qwertyuio", 2) # "qtorieuwy"
-jumbled_string("better example", 2) # "bexltept merae"
-# jumbled_string("Greetings", 8) # "Gtsegenri"
+# jumbled_string("better example", 2) # "bexltept merae"
+jumbled_string("Greetings", 8) # "Gtsegenri"
 
-# The above answer totally works, but it isn't efficient to pass all the tests
+
