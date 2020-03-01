@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e2b318bb-2543-483e-bcca-339f400724ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days 71-80/Day80.py" beforeDir="false" afterPath="$PROJECT_DIR$/Days 71-80/Day80.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,9 @@
       <workItem from="1580830103066" duration="1801000" />
       <workItem from="1580916513067" duration="18389000" />
       <workItem from="1581566147462" duration="37260000" />
-      <workItem from="1582290240921" duration="55607000" />
+      <workItem from="1582290240921" duration="55812000" />
+      <workItem from="1582995875812" duration="287000" />
+      <workItem from="1582996253596" duration="3695000" />
     </task>
     <servers />
   </component>
@@ -96,18 +97,18 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2373" y="305" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/1440.23.1920.1057@1440.23.1920.1057" timestamp="1580751318741" />
-    <state x="384" y="163" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576642234729">
+    <state x="384" y="163" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582996177811">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="384" y="163" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.877@0.23.1440.877" timestamp="1576642234729" />
+    <state x="384" y="163" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.877@0.23.1440.877" timestamp="1582996177811" />
     <state x="493" y="29" key="CommitChangelistDialog2" timestamp="1581129937669">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="493" y="29" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1581129937669" />
-    <state x="490" y="50" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579986950805">
+    <state x="490" y="50" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583071099523">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="490" y="50" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1579986950805" />
+    <state x="490" y="50" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1583071099523" />
     <state x="561" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1579204097996">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

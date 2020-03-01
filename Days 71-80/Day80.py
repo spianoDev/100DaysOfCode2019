@@ -51,6 +51,7 @@ def sum_of_intervals(intervals):
         else:
             new_intervals.append(intervals_sort[0])
             new_intervals.append(intervals_sort[1])
+    print(new_intervals)
     if len(intervals_sort) > 2:
         pointer1 = 1
         pointer2 = 1
@@ -59,10 +60,26 @@ def sum_of_intervals(intervals):
             print(pointer2)
             break
         new_intervals.append((intervals_sort[0][0], intervals_sort[pointer2-1][1]))
-        if new_intervals[0][1] > intervals_sort[pointer2][0]:
-            print('do something')
+        print(new_intervals)
+        while new_intervals[0][1] > intervals_sort[pointer2][0]:
+            print('comparisons:')
+            print(new_intervals[0][1], intervals_sort[pointer2][0])
+            if new_intervals[0][1] > intervals_sort[pointer2][1]:
+                print('stop')
+                break
+            else:
+                print('do something')
+                new_intervals.pop()
+                print(new_intervals)
+                new_intervals.append((intervals_sort[0][0], intervals_sort[pointer2][1]))
+                print(new_intervals)
+                pointer2 += 1
+                print('pointer 2 moving up to: ' + str(pointer2))
+                if pointer2 == len(intervals_sort):
+                    break
         else:
             new_intervals.append(intervals_sort[pointer2])
+    print('these are the new intervals: ')
     print(new_intervals)
 # count the number of values in each list
     for value in new_intervals:
@@ -80,6 +97,6 @@ def sum_of_intervals(intervals):
 # sum_of_intervals([(1, 5)]) # 4
 # sum_of_intervals([(1, 5), (6, 10)]) # 8
 # sum_of_intervals([(1, 5), (1, 5)]) # 4
-sum_of_intervals([(1, 4), (7, 10), (3, 5)]) # 7
-# sum_of_intervals([(1,5),(10, 20),(1, 6),(16, 19),(5, 11)]) # 19
+# sum_of_intervals([(1, 4), (7, 10), (3, 5)]) # 7
+sum_of_intervals([(1,5),(10, 20),(1, 6),(16, 19),(5, 11)]) # 19
 
