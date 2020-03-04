@@ -69,7 +69,7 @@ function twoSum(numbers, target) {
     }
     console.log(answer);
     // need to make sure the answer index values are presented in order
-    if (numbers.indexOf(answer[0] > numbers.indexOf(answer[1]))){
+    if (numbers.indexOf(answer[0]) > numbers.indexOf(answer[1])){
         console.log('switch them');
         let temp = answer[1];
         answer.pop();
@@ -93,13 +93,9 @@ function twoSum(numbers, target) {
     index = [...new Set(index)];
     console.log(index);
     console.log(numbers.indexOf(answer[0]));
-    // if the duplicates removed still results in 3 index values, remove the first value
+    // if the duplicates removed still results in 3 index values, remove the middle value
     if (index.length > 2) {
-        if (index[0] !== numbers.indexOf(answer[0]) || index[1] !== numbers.indexOf(answer[0])) {
-            index.shift();
-        }  else if (index[1] !== numbers.indexOf(answer[1]) || index[2] !== numbers.indexOf(answer[1])) {
-            index.pop();
-        }
+        index.splice(1,1);
     }
     console.log('final answer ' + index);
     return index;
@@ -115,6 +111,6 @@ function twoSum(numbers, target) {
 // twoSum(numbers = [753, 271, 576, 783, 700, 898, 818, 942, 988, 38], target = 980);
 // twoSum(numbers = [229, 643, 456, 156, 380, 156, 879, 763, 811, 49], target = 1035);
 // twoSum(numbers = [568, 292, 222, 681, 681, 55, 514, 4, 831, 144], target = 1195);
-twoSum(numbers = [547, 88, 682, 295, 472, 106, 191, 263, 617, 295], target = 977);
+// twoSum(numbers = [547, 88, 682, 295, 472, 106, 191, 263, 617, 295], target = 977);
+twoSum(numbers = [805, 906, 424, 88, 657, 764, 666, 257, 578, 88], target = 745);
 
-// only final example is not working... passing 504 examples
