@@ -16,6 +16,17 @@
 // ('=RRR') => [1, 1, 2, 3, 4]
 
 function partialTeacher(s){
+    // cannot have negative toffee so I need to count up all the L and R to determine the minimum number to start with
+    let numOfLefts = 0;
+    let numOfRights = 0;
+    for (let char of s) {
+        if (char === 'L') {
+            numOfLefts += 1;
+        } if (char === 'R') {
+            numOfRights += 1;
+        }
+    }
+    console.log(numOfLefts, numOfRights);
     // variable for array output
     let answer = [];
     // count variables
@@ -24,6 +35,7 @@ function partialTeacher(s){
     let leftCount = 1;
     // begin the answer with initial values according to s values
     if (s[0] === '=') {
+        answer.push(1);
         answer.push(1);
     } if (s[0] === 'L') {
         answer.push(2);
@@ -35,10 +47,18 @@ function partialTeacher(s){
     }
     // loop through each character in s
     for (let i = 0; i < s.length; i++) {
-        console.log(s[i]);
+        // console.log(s[i]);
         // assign values according to the char result
         if (s[i] === '='){
-            answer.push(equalCount);
+            if (s[i - 1] === 'R') {
+                equalCount = rightCount;
+                answer.push(equalCount);
+            } if (s[i - 1] === 'L') {
+                equalCount = leftCount;
+                answer.push(equalCount);
+            } if (s[i - 1] === '='){
+                answer.push(equalCount);
+            }
         } else if (s[i] === 'R') {
             if (s[i - 1] === 'R') {
                 rightCount += 1;
@@ -68,6 +88,12 @@ function partialTeacher(s){
 }
 
 // partialTeacher('LRLR'); // [2,1,2,1,2]
-// partialTeacher('=RRR'); // [1,1,2,3,4]
+partialTeacher('=RRR'); // [1,1,2,3,4]
 // partialTeacher('=RLR');
-partialTeacher('RRRR');
+// partialTeacher('RRRR');
+// partialTeacher('LLLLLLLRRRR'); // difference between L and R is 4 (need to add one to remain positive)
+// partialTeacher('R='); // [1,2,2]
+// partialTeacher('L=LLLLRL=RR=RLLLL=RR=='); // [6, 5, 5, 4, 3, 2, 1, 2, 1, 1, 2, 3, 3, 5, 4, 3, 2, 1, 1, 2, 3, 3, 3]
+
+// I am leaving this one... In looking at the expected answers from the test, they just don't make sense
+// and trying to write a program when the answer doesn't make sense is not possible.
