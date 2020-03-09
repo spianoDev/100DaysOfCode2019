@@ -19,6 +19,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/spianoDev/100DaysOfCode2019.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1TtyMrdRORNIxWSCzhSuSCxLHXA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,7 +79,7 @@
       <workItem from="1581566147462" duration="37260000" />
       <workItem from="1582290240921" duration="55812000" />
       <workItem from="1582995875812" duration="287000" />
-      <workItem from="1582996253596" duration="27916000" />
+      <workItem from="1582996253596" duration="38912000" />
     </task>
     <servers />
   </component>
@@ -101,10 +108,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="384" y="163" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.877@0.23.1440.877" timestamp="1582996177811" />
-    <state x="493" y="29" key="CommitChangelistDialog2" timestamp="1581129937669">
+    <state x="493" y="29" key="CommitChangelistDialog2" timestamp="1583687168933">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="493" y="29" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1581129937669" />
+    <state x="493" y="29" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1583687168933" />
     <state x="490" y="50" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583071099523">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
