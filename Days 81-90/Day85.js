@@ -48,10 +48,34 @@
 
 // tried the above solution, but it didn't quite work...
 
-
+function yesNo(arr){
+    console.log(arr);
+    // create a variables to hold the new order of the arrays
+    let answer = [];
+    let leftovers = arr;
+    // loop through the original arr and add the even values to the circleArray
+    function circleArray(array) {
+        for (let i = 0; i < arr.length; i++) {
+            if (i % 2 === 0) {
+                answer.push(leftovers[i]);
+            } else {
+                // leftovers = [];
+                leftovers.push(leftovers[i]);
+            }
+        }
+    }
+    circleArray(arr);
+    // I think a recursive loop might work well, but I'm not sure how that will work since it is a different
+    // sequence depending on the length of the original arr
+    if (arr.length % 2 === 0) {
+        circleArray(leftovers);
+    }
+    console.log(answer);
+    return answer;
+}
 
 // yesNo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 3, 5, 7, 9, 2, 6, 10, 8, 4]
-// yesNo(['this', 'code', 'is', 'right', 'the']); // ['this', 'is', 'the', 'right', 'code']
-yesNo([ 'L', 'W', 'P', 'V', 'K', '3' ]); // ['L', 'P', 'K', 'W', '3', 'V']
+yesNo(['this', 'code', 'is', 'right', 'the']); // ['this', 'is', 'the', 'right', 'code']
+// yesNo([ 'L', 'W', 'P', 'V', 'K', '3' ]); // ['L', 'P', 'K', 'W', '3', 'V']
 // yesNo([ '2', '5', 'p', 'e', 'f', 'x', 'P', '4', 'e' ]); // ['2', 'p', 'f', 'P', 'e', 'e', '4', 'x', '5']
 
