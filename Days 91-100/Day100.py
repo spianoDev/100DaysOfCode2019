@@ -109,7 +109,7 @@ def check1800(s):
     first_letter = []
     second_letter = []
     third_letter = []
-#     middle_letter = []
+    middle_letter = []
     last_letter = []
     penultimate_letter = []
     third_from_end_letter = []
@@ -120,6 +120,8 @@ def check1800(s):
             second_letter.append(phone_numbers['twos'])
         if letters_in_s[2] == letter:
             third_letter.append(phone_numbers['twos'])
+        if letters_in_s[3] == letter:
+            middle_letter.append(phone_numbers['twos'])
         if letters_in_s[-1] == letter:
             last_letter.append(phone_numbers['twos'])
         if letters_in_s[-2] == letter:
@@ -133,6 +135,8 @@ def check1800(s):
            second_letter.append(phone_numbers['threes'])
         if letters_in_s[2] == letter:
            third_letter.append(phone_numbers['threes'])
+        if letters_in_s[3] == letter:
+           middle_letter.append(phone_numbers['threes'])
         if letters_in_s[-1] == letter:
            last_letter.append(phone_numbers['threes'])
         if letters_in_s[-2] == letter:
@@ -146,6 +150,8 @@ def check1800(s):
            second_letter.append(phone_numbers['fours'])
         if letters_in_s[2] == letter:
            third_letter.append(phone_numbers['fours'])
+        if letters_in_s[3] == letter:
+            middle_letter.append(phone_numbers['fours'])
         if letters_in_s[-1] == letter:
            last_letter.append(phone_numbers['fours'])
         if letters_in_s[-2] == letter:
@@ -159,6 +165,8 @@ def check1800(s):
            second_letter.append(phone_numbers['fives'])
         if letters_in_s[2] == letter:
            third_letter.append(phone_numbers['fives'])
+        if letters_in_s[3] == letter:
+           middle_letter.append(phone_numbers['fives'])
         if letters_in_s[-1] == letter:
            last_letter.append(phone_numbers['fives'])
         if letters_in_s[-2] == letter:
@@ -172,6 +180,8 @@ def check1800(s):
            second_letter.append(phone_numbers['sixes'])
         if letters_in_s[2] == letter:
            third_letter.append(phone_numbers['sixes'])
+        if letters_in_s[3] == letter:
+           middle_letter.append(phone_numbers['sixes'])
         if letters_in_s[-1] == letter:
            last_letter.append(phone_numbers['sixes'])
         if letters_in_s[-2] == letter:
@@ -185,6 +195,8 @@ def check1800(s):
            second_letter.append(phone_numbers['sevens'])
         if letters_in_s[2] == letter:
            third_letter.append(phone_numbers['sevens'])
+        if letters_in_s[3] == letter:
+           middle_letter.append(phone_numbers['sevens'])
         if letters_in_s[-1] == letter:
            last_letter.append(phone_numbers['sevens'])
         if letters_in_s[-2] == letter:
@@ -198,6 +210,8 @@ def check1800(s):
            second_letter.append(phone_numbers['eights'])
         if letters_in_s[2] == letter:
            third_letter.append(phone_numbers['eights'])
+        if letters_in_s[3] == letter:
+           middle_letter.append(phone_numbers['eights'])
         if letters_in_s[-1] == letter:
            last_letter.append(phone_numbers['eights'])
         if letters_in_s[-2] == letter:
@@ -211,45 +225,137 @@ def check1800(s):
            second_letter.append(phone_numbers['nines'])
         if letters_in_s[2] == letter:
            third_letter.append(phone_numbers['nines'])
+        if letters_in_s[3] == letter:
+           middle_letter.append(phone_numbers['nines'])
         if letters_in_s[-1] == letter:
            last_letter.append(phone_numbers['nines'])
         if letters_in_s[-2] == letter:
            penultimate_letter.append(phone_numbers['nines'])
         if letters_in_s[-3] == letter:
            third_from_end_letter.append(phone_numbers['nines'])
-    print(first_letter[0][0], second_letter)
+    print(len(first_letter[0]))
 
     first_two_matches = []
     first_three_matches = []
     second_two_matches = []
     last_three_matches = []
+    middle_options = []
 # check the WORDS list against the first three letters of letters_in_s for a list of first words
     for word in WORDS:
-        if word[0] == first_letter[0][0] or word[0] == first_letter[0][1] or word[0] == first_letter[0][2]:
-            first_word.append(word)
+        if len(first_letter[0]) == 3:
+            if word[0] == first_letter[0][0] or word[0] == first_letter[0][1] or word[0] == first_letter[0][2]:
+                first_word.append(word)
+        elif len(first_letter[0]) == 4:
+            if word[0] == first_letter[0][0] or word[0] == first_letter[0][1] or word[0] == first_letter[0][2] or word[0] == first_letter[0][3]:
+                first_word.append(word)
     print(first_word)
     for word in first_word:
-        if word[1] == second_letter[0][0] or word[1] == second_letter[0][1] or word[1] == second_letter[0][2]:
-            first_two_matches.append(word)
+        if len(second_letter[0]) == 3:
+            if word[1] == second_letter[0][0] or word[1] == second_letter[0][1] or word[1] == second_letter[0][2]:
+                first_two_matches.append(word)
+        elif len(second_letter[0]) == 4:
+            if word[1] == second_letter[0][0] or word[1] == second_letter[0][1] or word[1] == second_letter[0][2] or word[1] == second_letter[0][3]:
+                first_two_matches.append(word)
     print(first_two_matches)
     for word in first_two_matches:
-        if word[2] == third_letter[0][0] or word[2] == third_letter[0][1] or word[2] == third_letter[0][2]:
-            first_three_matches.append(word)
+        if len(third_letter[0]) == 3:
+            if word[2] == third_letter[0][0] or word[2] == third_letter[0][1] or word[2] == third_letter[0][2]:
+                first_three_matches.append(word)
+        elif len(third_letter[0]) == 4:
+            if word[2] == third_letter[0][0] or word[2] == third_letter[0][1] or word[2] == third_letter[0][2] or word[2] == third_letter[0][3]:
+                first_three_matches.append(word)
     print(first_three_matches)
 # check the WORDS list against the last three letters of letters_in_s for a list of second words
 
     for word in WORDS:
-        if word[-1] == last_letter[0][0] or word[-1] == last_letter[0][1] or word[-1] == last_letter[0][2]:
-            second_word.append(word)
+        if len(last_letter[0]) == 3:
+            if word[-1] == last_letter[0][0] or word[-1] == last_letter[0][1] or word[-1] == last_letter[0][2]:
+                second_word.append(word)
+        elif len(last_letter[0]) == 4:
+            if word[-1] == last_letter[0][0] or word[-1] == last_letter[0][1] or word[-1] == last_letter[0][2] or word[-1] == last_letter[0][3]:
+                second_word.append(word)
     print(second_word)
     for word in second_word:
-        if word[-2] == penultimate_letter[0][0] or word[-2] == penultimate_letter[0][1] or word[2] == penultimate_letter[0][2]:
-            second_two_matches.append(word)
+        if len(penultimate_letter[0]) == 3:
+            if word[-2] == penultimate_letter[0][0] or word[-2] == penultimate_letter[0][1] or word[2] == penultimate_letter[0][2]:
+                second_two_matches.append(word)
+        elif len(penultimate_letter[0]) == 4:
+            if word[-2] == penultimate_letter[0][0] or word[-2] == penultimate_letter[0][1] or word[2] == penultimate_letter[0][2] or word[2] == penultimate_letter[0][3]:
+                second_two_matches.append(word)
     print(second_two_matches)
     for word in second_two_matches:
-        if word[-3] == third_from_end_letter[0][0] or word[-3] == third_from_end_letter[0][1] or word[-3] == third_from_end_letter[0][2]:
-            last_three_matches.append(word)
+        if len(third_from_end_letter[0]) == 3:
+            if word[-3] == third_from_end_letter[0][0] or word[-3] == third_from_end_letter[0][1] or word[-3] == third_from_end_letter[0][2]:
+                last_three_matches.append(word)
+        elif len(third_from_end_letter[0]) == 4:
+            if word[-3] == third_from_end_letter[0][0] or word[-3] == third_from_end_letter[0][1] or word[-3] == third_from_end_letter[0][2] or word[-3] == third_from_end_letter[0][3]:
+                last_three_matches.append(word)
     print(last_three_matches)
+# check the WORDS list against the middle letter and each of the two smaller arrays
+    for word in first_three_matches:
+        if len(middle_letter[0]) == 3 and len(word) > 3:
+            if word[3] == middle_letter[0][0] or word[3] == middle_letter[0][1] or word[3] == middle_letter[0][2]:
+                middle_options.append(word)
+        elif len(middle_letter[0]) == 4 and len(word) > 3:
+            if word[3] == middle_letter[0][0] or word[3] == middle_letter[0][1] or word[3] == middle_letter[0][2] or word[3] == middle_letter[0][3]:
+                middle_options.append(word)
+    for word in last_three_matches:
+        if len(middle_letter[0]) == 3 and len(word) > 3:
+            if word[3] == middle_letter[0][0] or word[3] == middle_letter[0][1] or word[3] == middle_letter[0][2]:
+                middle_options.append(word)
+        elif len(middle_letter[0]) == 4 and len(word) > 3:
+            if word[3] == middle_letter[0][0] or word[3] == middle_letter[0][1] or word[3] == middle_letter[0][2] or word[3] == middle_letter[0][3]:
+                middle_options.append(word)
+    print(middle_options)
+# put it all together for the final answer return
+    print(first_three_matches, middle_options, last_three_matches)
+    first_word_three = []
+    first_word_four = []
+    second_word_three = []
+    second_word_four = []
+    for word in first_three_matches:
+        if len(word) == 3:
+            first_word_three.append(word)
+        elif len(word) == 4:
+            first_word_four.append(word)
+    for word in last_three_matches:
+        if len(word) == 3:
+            second_word_three.append(word)
+        elif len(word) == 4:
+            second_word_four.append(word)
+    print(first_word_three, first_word_four, middle_options, second_word_three, second_word_four)
+    index1 = 0
+    index2 = 0
+    first_index = 0
+    second_index = 0
+
+    if len(second_word_four) > 0:
+        second_word_four = [word for word in middle_options]
+    if len(first_word_three) > 0 and len(second_word_four) > 0:
+        while first_index < len(first_word_three) and second_index < len(second_word_four):
+            other_800s.append('1-800-' + first_word_three[index1] + '-' + second_word_four[index2])
+            index1 += 1
+            index2 += 1
+            if index1 == len(first_word_three) and index2 < len(second_word_four):
+                index1 -= 1
+            if index1 < len(first_word_three) and index2 == len(second_word_four):
+                index2 -= 1
+
+    if len(first_word_four) > 0:
+        first_word_four = [word for word in middle_options]
+    if len(first_word_four) > 0 and len(second_word_three) > 0:
+        while first_index < len(first_word_four) and second_index < len(second_word_three):
+            other_800s.append('1-800-' + first_word_four[first_index] + '-' + second_word_three[second_index])
+            first_index += 1
+            second_index += 1
+            if first_index == len(first_word_four) and second_index < len(second_word_three):
+                first_index -= 1
+            if first_index < len(first_word_four) and second_index == len(second_word_three):
+                second_index -= 1
+
+    print(other_800s)
+    return other_800s
+
 
 #         if word[-1] == letters_in_s[-1] and word[-2] == letters_in_s[-2] and word[-3] == letters_in_s[-3]:
 #             second_word.append(word)
